@@ -23,5 +23,5 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Run poetry install
         run: poetry install
-      - name: Run mkdocs gh-deploy --force
-        run: mkdocs gh-deploy --force
+      - name: Run petry run mkdocs gh-deploy --force
+        run: poetry run mkdocs gh-deploy --force
