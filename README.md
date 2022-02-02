@@ -3,13 +3,27 @@
 
 ## Usage
 
-I have struggled to get Poetry working on Python 3.10.x.
-I think the reason was I have installed Poetry with Python 3.9.x and upgraded to 3.10.x
-
-Run the following in Python virtual environment if you run into a trouble to run ```poetry```.
+### For local environment
 ```shell
-pip install cleo tomlkit poetry.core requests cachecontrol cachy html5lib pkginfo virtualenv lockfile
+git clone https://github.com/moz5691/mkdocs-per.git
+poetry install
+mkdocs serve
 ```
+
+### GitHub Actions
+
+Note that you need to enable GitHub Pages site and source branch as ```none```. Never choose ```main``` branch for the source of GitHub Pages.
+MkDocs build creates ```site``` directory and push compiled HTML/CSS/JavaScript in ```site``` directory then push the content in ```site``` to "gh-pages" branch.
+
+- Step 1. Enabled GitHub Pages and choose source branch as ```none```.  Please refer the following (important!!!)
+[Configuring a publishing source for your GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+- Step 2. After first GitHub Actions deploy, you should see GitHub page is unreachable.
+    You need to go to ```Settings``` for GitHub pages again and switch source branch to ```gh-pages``` which was created automatically.  
+
+- Step 3. Push/merge to ```main``` branch.  You should see it works perfectly.  No more tweaking of branch needed.
+
+
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
@@ -28,15 +42,13 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         ...       # Other markdown pages, images and other files.
 
 
-## GitHub Actions
 
-Note that you need to enable GitHub Pates site and source branch as "None", never choose "Main" branch.
-MkDocs build creates ```site``` directory and push compiled HTML/CSS/JavaScript in "gh-pages" branch.
+## Troubleshoot
 
-- Step 1. Enabled GitHub Pages and choose source branch as ```none```.  Please refer the following (important!!!)
-[Configuring a publishing source for your GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+I have struggled to get Poetry working on Python 3.10.x.
+I think the reason was I have installed Poetry with Python 3.9.x and upgraded to 3.10.x
 
-- Step 2. After first GitHub Actions deploy, you should see GitHub page is unreachable.
-    You need to go to ```Settings``` for GitHub pages again and switch source branch to ```gh-pages``` which was created automatically.  
-
-- Step 3. Push/merge to ```main``` branch.  You should see it works perfectly.  No more tweaking of branch needed.
+Run the following in Python virtual environment if you run into a trouble to run ```poetry```.
+```shell
+pip install cleo tomlkit poetry.core requests cachecontrol cachy html5lib pkginfo virtualenv lockfile
+```
