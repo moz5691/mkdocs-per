@@ -28,3 +28,15 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         ...       # Other markdown pages, images and other files.
 
 
+## GitHub Actions
+
+Note that you need to enable GitHub Pates site and source branch as "None", never choose "Main" branch.
+MkDocs build creates ```site``` directory and push compiled HTML/CSS/JavaScript in "gh-pages" branch.
+
+- Step 1. Enabled GitHub Pages and choose source branch as ```none```.  Please refer the following (important!!!)
+[Configuring a publishing source for your GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+- Step 2. After first GitHub Actions deploy, you should see GitHub page is unreachable.
+    You need to go to ```Settings``` for GitHub pages again and switch source branch to ```gh-pages``` which was created automatically.  
+
+- Step 3. Push/merge to ```main``` branch.  You should see it works perfectly.  No more tweaking of branch needed.
