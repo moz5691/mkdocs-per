@@ -1,0 +1,23 @@
+site_name: Forums
+site_url:
+repo_url:
+repo_name: 'mkdocs-per'
+edit_url:
+site_author: C. Ahn
+copyright:
+
+nav:
+  - Home: index.md
+  - About: about.md
+
+theme:
+  name: material
+
+markdown_extensions:
+  - toc:
+      permalink: "&para;"
+      baselevel: 2
+      separator: "_"
+
+extra:
+  version: 0.1
