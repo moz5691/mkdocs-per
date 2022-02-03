@@ -1,0 +1,21 @@
+@keyframes heart {
+  0%, 40%, 80%, 100% {
+    transform: scale(1);
+  }
+  20%, 60% {
+    transform: scale(1.15);
+  }
+}
+
+.md-grid {
+  max-width: 1440px;
+}
+
+
+.heart {
+  animation: heart 1000ms infinite;
+}
+
+.twitter {
+  color: #1DA1F2;
+}

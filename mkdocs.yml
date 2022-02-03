@@ -23,6 +23,7 @@ theme:
     - navigation.top
     - header.autohide
     - announce.dismiss
+    - content.tabs.link
   language: en
   font:
     text: Roboto Mono
@@ -37,6 +38,19 @@ theme:
         name: Switch to light mode
   icon:
     repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
 
 plugins:
   - search
@@ -49,6 +63,8 @@ plugins:
 
 markdown_extensions:
   - md_in_html
+  - admonition
+  - pymdownx.details
   - toc:
       permalink: "&para;"
       baselevel: 2
@@ -56,12 +72,29 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - codehilite:
+      linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
 
 extra_css:
-  - stylesheets/extra.css
+  - assets/css/extra.css
 
 extra_javascript:
-  - javascripts/shortcuts.js
+  - assets/js/shortcuts.js
+  - assets/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 
 extra:
