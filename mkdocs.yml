@@ -18,6 +18,7 @@ theme:
   name: material
   custom_dir: overrides
   features:
+    - header.autohide
     - announce.dismiss
 #    - navigation.instant
     - navigation.indexes
@@ -26,9 +27,9 @@ theme:
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.selection
+    - navigation.prune
 #    - navigation.expand
     - navigation.top
-    - header.autohide
     - content.code.annotate
     - content.tabs.link
   language: en
@@ -36,11 +37,17 @@ theme:
     text: IBM Plex Sans
     code: IBM Plex Mono
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: light-blue
       toggle:
         icon: material/lightbulb-outline
         name: Switch to dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
       toggle:
         icon: material/lightbulb
         name: Switch to light mode
@@ -63,6 +70,11 @@ theme:
 
 plugins:
   - search
+  - mermaid2:
+      arguments:
+        securityLevel: 'loose'
+        theme: |
+          ^(JSON.parse(__md_get("__palette").index == 1)) ? 'dark' : 'light'
   - git-revision-date
   - render_swagger
   - git-revision-date-localized:
@@ -92,7 +104,7 @@ markdown_extensions:
       custom_fences:
           - name: mermaid
             class: mermaid
-            format: !!python/name:pymdownx.superfences.fence_code_format
+            format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.tabbed:
       alternate_style: true
   - codehilite:
@@ -122,9 +134,11 @@ extra_css:
 
 extra_javascript:
   - assets/js/shortcuts.js
+  - assets/js/refresh_on_toggle_dark_light.js
   - assets/js/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+#  - https://unpkg.com/mermaid/dist/mermaid.min.js
 
 
 extra:
@@ -140,4 +154,4 @@ extra:
 
 #    provider: mike
 
-copyright: Copyright &copy; 2022 Chan Ho Ahn
+#copyright: Copyright &copy; 2022 Chan Ho Ahn
