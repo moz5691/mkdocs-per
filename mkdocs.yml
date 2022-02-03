@@ -1,8 +1,8 @@
 site_name: Forums
-site_url:
-repo_url:
+site_url: https://moz5691.github.io/mkdocs-per/
+repo_url: https://github.com/moz5691/mkdocs-per/
 repo_name: 'mkdocs-per'
-edit_url:
+edit_uri: edit/main/docs/
 site_author: C. Ahn
 copyright:
 
@@ -12,12 +12,66 @@ nav:
 
 theme:
   name: material
+  custom_dir: overrides
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - header.autohide
+    - announce.dismiss
+  language: en
+  font:
+    text: Roboto Mono
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - git-revision-date
+#  - mike
+#  - tags
 
 markdown_extensions:
+  - md_in_html
   - toc:
       permalink: "&para;"
       baselevel: 2
       separator: "_"
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/shortcuts.js
+
 
 extra:
   version: 0.1
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/moz5691
+      name: Chan Ho Ahn on GitHub
+    - icon: fontawesome/brands/linkedin
+      link:
+      name: Chan Ho Ahn on LinkedIn
+
+#    provider: mike
+
+copyright: Copyright &copy; 2022 Chan Ho Ahn

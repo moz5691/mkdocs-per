@@ -4,9 +4,12 @@ summary: index page
 authors:
     - C. Ahn
 date: 2022-02-01
+tags:
+    - brand new
+    - insiders
 ---
 
-# Forums
+# Welcome to My Docs 0.2
 
 ## sub title 1
 
