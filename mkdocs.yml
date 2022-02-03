@@ -41,6 +41,9 @@ theme:
 plugins:
   - search
   - git-revision-date
+  - git-revision-date-localized:
+      type: iso_datetime
+      enable_creation_date: true
 #  - mike
 #  - tags
 
