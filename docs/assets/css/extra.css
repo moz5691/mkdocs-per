@@ -1,3 +1,9 @@
+:root {
+  --md-primary-fg-color: #5f64a0;
+  --md-accent-fg-color: #5f64a0;
+}
+
+
 @keyframes heart {
   0%, 40%, 80%, 100% {
     transform: scale(1);
@@ -18,4 +24,10 @@
 
 .twitter {
   color: #1DA1F2;
+}
+
+.announce {
+  color: greenyellow;
+  font-size: 1em;
+  margin: auto;
 }

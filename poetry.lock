@@ -213,6 +213,17 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "mkdocs-render-swagger-plugin"
+version = "0.0.3"
+description = "MKDocs plugin for rendering swagger & openapi files."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+mkdocs = "*"
+
+[[package]]
 name = "packaging"
 version = "21.3"
 description = "Core utilities for Python packages"
@@ -344,7 +355,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "ec037b7ae3b6fbe1c90fe8f0208df3af03858c09aa470efb63df454487456e27"
+content-hash = "d9b2348e158c40409fd5141d5294f846f64cc726775f9457e4549ad5bd3a5462"
 
 [metadata.files]
 babel = [
@@ -481,6 +492,10 @@ mkdocs-material = [
 mkdocs-material-extensions = [
     {file = "mkdocs-material-extensions-1.0.3.tar.gz", hash = "sha256:bfd24dfdef7b41c312ede42648f9eb83476ea168ec163b613f9abd12bbfddba2"},
     {file = "mkdocs_material_extensions-1.0.3-py3-none-any.whl", hash = "sha256:a82b70e533ce060b2a5d9eb2bc2e1be201cf61f901f93704b4acf6e3d5983a44"},
+]
+mkdocs-render-swagger-plugin = [
+    {file = "mkdocs-render-swagger-plugin-0.0.3.tar.gz", hash = "sha256:30e9fe80ba2bdbc2f634e97f9c78b8e71199b1268af4ad192decbc8351b1fe96"},
+    {file = "mkdocs_render_swagger_plugin-0.0.3-py3-none-any.whl", hash = "sha256:b8002e34d9bfd3f8eb13d879201da465080ce6b44bb3933ba8a385990c2abe6c"},
 ]
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},

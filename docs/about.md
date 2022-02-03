@@ -20,5 +20,10 @@ tags on separate lines and adding new lines between the tags and the content.
 
 ++ctrl+alt+del++
 
+:fontawesome-brands-twitter:{ .twitter }
+
+:octicons-heart-fill-24:{ .heart }
+:heart:{.heart}
+
 
 
