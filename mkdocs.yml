@@ -12,6 +12,9 @@ nav:
     - openapi/index.md
     - "Pet Store": openapi/petstore.md
     - "Uspto": openapi/uspto.md
+    - "Robots Tracker": openapi/robotstracker.md
+  - "Linux/Bash":
+    - "Linux": linux_bash/linux_commands.md
   - About: about.md
 
 theme:
