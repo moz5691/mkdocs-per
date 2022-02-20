@@ -1,0 +1,621 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Robots Kinematics",
+    "contact": {
+      "name": "Chan Ho Ahn",
+      "email": "moz5691@gmail.com"
+    },
+    "version": "0.0.1"
+  },
+    "servers": [
+    {
+      "url": "https://robots-tracker-ap5ftzim5a-ue.a.run.app",
+      "description": "Cloud Run"
+    }
+  ],
+  "paths": {
+    "/health/ping/": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "Health",
+        "operationId": "health_health_ping__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Home",
+        "operationId": "home__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/finder": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Form Post",
+        "operationId": "form_post_finder_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/login": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Login",
+        "operationId": "login_login_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Auth",
+        "operationId": "auth_auth_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Logout",
+        "operationId": "logout_logout_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/robots/": {
+      "get": {
+        "tags": [
+          "Robots"
+        ],
+        "summary": "Get All Robots",
+        "operationId": "get_all_robots_robots__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get All Robots Robots  Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/src.models.robot.RobotSummary.leaf"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Robots"
+        ],
+        "summary": "Add Robot",
+        "operationId": "add_robot_robots__post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Robot"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RobotResponseSchema"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/robots/{id}/": {
+      "get": {
+        "tags": [
+          "Robots"
+        ],
+        "summary": "Get By Id",
+        "operationId": "get_by_id_robots__id___get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "integer"
+            },
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/src.models.robot.RobotSummary.leaf"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Robots"
+        ],
+        "summary": "Delete By Id",
+        "operationId": "delete_by_id_robots__id___delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "integer"
+            },
+            "name": "id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RobotResponseSchema"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/robots/robot_id/{robot_id}/": {
+      "get": {
+        "tags": [
+          "Robots"
+        ],
+        "summary": "Get By Robot Id",
+        "operationId": "get_by_robot_id_robots_robot_id__robot_id___get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Robot Id",
+              "type": "integer"
+            },
+            "name": "robot_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RobotAvgResponseSchema"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Robots"
+        ],
+        "summary": "Delete By Robot Id",
+        "operationId": "delete_by_robot_id_robots_robot_id__robot_id___delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Robot Id",
+              "type": "integer"
+            },
+            "name": "robot_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Delete By Robot Id Robots Robot Id  Robot Id   Delete",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/src.models.robot.RobotSummary.leaf"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/docs": {
+      "get": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Get Documentation",
+        "operationId": "get_documentation_docs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Data": {
+        "title": "Data",
+        "required": [
+          "kk_header"
+        ],
+        "type": "object",
+        "properties": {
+          "kk_data": {
+            "title": "Kk Data",
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "default": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "kk_header": {
+            "$ref": "#/components/schemas/Header"
+          }
+        }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "Header": {
+        "title": "Header",
+        "type": "object",
+        "properties": {
+          "timestamp_sec": {
+            "title": "Timestamp Sec",
+            "type": "integer",
+            "default": 1559752729
+          },
+          "robot_id": {
+            "title": "Robot Id",
+            "type": "integer",
+            "default": 123
+          },
+          "sys_type": {
+            "title": "Sys Type",
+            "type": "string",
+            "default": "AAA"
+          }
+        }
+      },
+      "Robot": {
+        "title": "Robot",
+        "required": [
+          "kk_dict"
+        ],
+        "type": "object",
+        "properties": {
+          "kk_dict": {
+            "$ref": "#/components/schemas/Data"
+          }
+        }
+      },
+      "RobotAvgResponseSchema": {
+        "title": "RobotAvgResponseSchema",
+        "required": [
+          "robot_id",
+          "avg_kk_data",
+          "robots_count"
+        ],
+        "type": "object",
+        "properties": {
+          "robot_id": {
+            "title": "Robot Id",
+            "type": "integer"
+          },
+          "avg_kk_data": {
+            "title": "Avg Kk Data",
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "robots_count": {
+            "title": "Robots Count",
+            "type": "integer"
+          },
+          "robots": {
+            "title": "Robots",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "RobotResponseSchema": {
+        "title": "RobotResponseSchema",
+        "required": [
+          "id",
+          "robot_id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "robot_id": {
+            "title": "Robot Id",
+            "type": "integer"
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      },
+      "src.models.robot.RobotSummary.leaf": {
+        "title": "RobotSummary",
+        "required": [
+          "id",
+          "robot_id",
+          "type",
+          "time",
+          "kk_data_0",
+          "kk_data_1",
+          "kk_data_2",
+          "kk_data_3",
+          "kk_data_4",
+          "kk_data_5",
+          "kk_data_6",
+          "kk_data_7",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "robot_id": {
+            "title": "Robot Id",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "type": {
+            "title": "Type",
+            "type": "string"
+          },
+          "time": {
+            "title": "Time",
+            "type": "string",
+            "format": "date-time"
+          },
+          "kk_data_0": {
+            "title": "Kk Data 0",
+            "type": "number"
+          },
+          "kk_data_1": {
+            "title": "Kk Data 1",
+            "type": "number"
+          },
+          "kk_data_2": {
+            "title": "Kk Data 2",
+            "type": "number"
+          },
+          "kk_data_3": {
+            "title": "Kk Data 3",
+            "type": "number"
+          },
+          "kk_data_4": {
+            "title": "Kk Data 4",
+            "type": "number"
+          },
+          "kk_data_5": {
+            "title": "Kk Data 5",
+            "type": "number"
+          },
+          "kk_data_6": {
+            "title": "Kk Data 6",
+            "type": "number"
+          },
+          "kk_data_7": {
+            "title": "Kk Data 7",
+            "type": "number"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
