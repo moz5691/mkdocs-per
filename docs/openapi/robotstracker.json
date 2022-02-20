@@ -10,7 +10,12 @@
   },
     "servers": [
     {
-      "url": "https://robots-tracker-ap5ftzim5a-ue.a.run.app"
+      "url": "https://robots-tracker-ap5ftzim5a-ue.a.run.app",
+      "description": "Cloud Run"
+    },
+    {
+      "url": "http://34.68.210.201",
+      "description": "GKE"
     }
   ],
   "paths": {
